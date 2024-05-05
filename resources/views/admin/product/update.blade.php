@@ -17,7 +17,7 @@
                         <div class="row">
                             <div class="col mb-3">
                                 <label class="form-label">Product Name</label>
-                                <input type="text" name="name" class="form-control" placeholder="Name" value="{{$products->title}}">
+                                <input type="text" name="name" class="form-control" placeholder="Name" value="{{$products->name}}">
                                 @error('title')
                                 <span class="text-danger">{{$message}}</span>
                                 @enderror
@@ -25,9 +25,9 @@
                         </div>
                         <div class="row">
                             <div class="col mb-3">
-                                <label class="form-label">Category</label>
-                                <input type="text" name="details" class="form-control" placeholder="Category" value="{{$products->details}}">
-                                @error('category')
+                                <label class="form-label">Details</label>
+                                <input type="text" name="details" class="form-control" placeholder="Details" value="{{$products->details}}">
+                                @error('details')
                                 <span class="text-danger">{{$message}}</span>
                                 @enderror
                             </div>

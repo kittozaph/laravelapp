@@ -14,6 +14,14 @@
                         <a href="{{ route('admin/products/create') }}" class="btn btn-primary">Add Product</a>
                     </div>
                     <hr />
+                    <form method="GET" action="{{ route('admin/products') }}">
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Search" name="search" value="{{ request()->query('search') }}">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary" type="submit">Search</button>
+                            </div>
+                        </div>
+                    </form>
                     @if(Session::has('success'))
                     <div class="alert alert-success" role="alert">
                         {{ Session::get('success') }}
@@ -22,7 +30,7 @@
                     <table class="table table-hover">
                         <thead class="table-primary">
                             <tr>
-                                <th>#</th>
+                                <th>No.</th>
                                 <th>Name</th>
                                 <th>Details</th>
                                 <th>Price</th>
@@ -36,7 +44,7 @@
                                 <td class="align-middle">{{ $product->name }}</td>
                                 <td class="align-middle">{{ $product->details }}</td>
                                 <td class="align-middle">{{ $product->price }}</td>
-                                <td class="align-middle">{{ $product->publish }}</td>
+                                <td class="align-middle">{{ $product->publish == 1 ? 'Yes' : 'No' }}</td>
                                 <td class="align-middle">
                                     <div class="btn-group" role="group" aria-label="Basic example">
                                         <a href="{{ route('admin/products/edit', ['id'=>$product->id]) }}" type="button" class="btn btn-secondary">Edit</a>

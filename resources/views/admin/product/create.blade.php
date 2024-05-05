@@ -23,7 +23,7 @@
                         <div class="row mb-3">
                             <div class="col">
                                 <input type="text" name="name" class="form-control" placeholder="Name">
-                                @error('title')
+                                @error('name')
                                 <span class="text-danger">{{$message}}</span>
                                 @enderror
                             </div>
@@ -31,7 +31,7 @@
                         <div class="row mb-3">
                             <div class="col">
                                 <input type="text" name="details" class="form-control" placeholder="Details">
-                                @error('category')
+                                @error('details')
                                 <span class="text-danger">{{$message}}</span>
                                 @enderror
                             </div>
@@ -46,6 +46,7 @@
                         </div>
                         <div class="row mb-3">
                             <div class="col">
+                            <h1 class="mb-0">Publish</h1>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="publish" id="publish_yes" value="1">
                                     <label class="form-check-label" for="publish_yes">
